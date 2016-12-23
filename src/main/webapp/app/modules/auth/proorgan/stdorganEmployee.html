@@ -1,0 +1,50 @@
+<!-- 基准组织架构 -->
+<!-- BEGIN PAGE HEADER-->
+
+<h3 class="page-title">
+	security <small>人员管理</small>
+</h3>
+<!-- END PAGE HEADER-->
+
+<!-- BEGIN MAIN CONTENT -->
+<div class="row">
+	<!-- BEGIN RIGHT -->
+	<div class="col-md-12">
+		<div class="portlet light bordered">
+			<div class="portlet-title">
+				<div class="caption">
+					<i class="fa fa-cogs font-green-sharp"></i> <span
+						class="caption-subject font-green-sharp bold uppercase">{{title}}</span>
+				</div>
+			</div>
+			<!-- BEGGING PORTLET-BODY -->
+			<div class="portlet-body form">
+				<div class="col-md-4">
+					<div class="panel panel-default" style="height: 530px">
+						<div id="treeview" class="tree-demo"></div>
+					</div>
+				</div>
+				<div class="col-md-8">
+					<div class="panel panel-default ">
+						<ez-data-grid></ez-data-grid>
+					</div>
+				</div>
+				<div style="clear: both"></div>
+			</div>
+			<div class="modal-footer">
+				<button type="submit" class="btn btn-primary"
+					ng-click="ok(form.$valid,domain)">确定</button>
+				<button class="btn btn-default" ng-click="cancel()">取消</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- END RIGHT -->
+</div>
+
+
+
+
+
+
+

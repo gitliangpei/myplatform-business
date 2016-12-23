@@ -1,0 +1,54 @@
+<div class="modal-header">
+	<h3 class="modal-title">{{title}}</h3>
+</div>
+<div class="modal-body">
+	<form role="form" name="form" class="form-horizontal form-validation">
+		<div class="form-group">
+			<label class="col-sm-3 control-label">应用名称：</label>
+			<div class="col-sm-7">
+				<input type="text" class="form-control" ng-model="domain.name"
+					required>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-3 control-label">简称：</label>
+			<div class="col-sm-7">
+				<input type="text" class="form-control" ng-model="domain.abbr"
+					required>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-3 control-label">别名：</label>
+			<div class="col-sm-7">
+				<input type="text" class="form-control" ng-model="domain.alias"
+					required>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-3 control-label">编码：</label>
+			<div class="col-sm-7">
+				<input type="text" class="form-control" ng-model="domain.applicationCode"
+					required>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-3 control-label">公钥/私钥：</label>
+			<div class="col-sm-7">
+				<input type="text" class="form-control" ng-model="domain.applicationKey"
+					required>
+			</div>
+		</div>
+		<!-- <div class="form-group">
+			<label class="col-sm-3 control-label">状态：</label>
+			<div class="col-sm-7">
+				<select class="form-control " ng-model="domainStatus" ng-options="gStatus.name as gStatus.status for gStatus in gStatuses" ></select>
+																					gStatus.name相当于value  网后台传数据就是传value 
+			</div>
+		</div> --> 
+	</form>
+</div>
+<div class="modal-footer">
+	<button type="submit" class="btn btn-primary" ng-click="ok(form.$valid,domain)"
+		>确定</button>
+	<button class="btn btn-default" ng-click="cancel()">取消</button>
+</div>

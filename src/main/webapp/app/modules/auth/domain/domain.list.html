@@ -1,0 +1,46 @@
+<!-- 基准组织架构 -->
+<h3 class="page-title"> 业务域列表
+</h3>
+<!-- END PAGE HEADER-->
+
+<!-- BEGIN MAIN CONTENT -->
+<div class="row">
+    <!-- BEGIN RIGHT -->
+    <div class="col-md-12">
+        <div class="portlet light bordered">
+            <div class="portlet-title">
+                <div class="caption">
+                <form class="form-inline " role="form">
+                    <!-- <i class="fa fa-cogs font-green-sharp"></i>
+                    <span class="caption-subject font-green-sharp bold uppercase">列表</span> -->
+                    <div class="form-group">
+							<label>业务域：</label> <input type="text" class="form-control"
+								ng-model="domain.name"  placeholder="业务域名称">
+						</div>
+						</form>
+                </div>
+                <div class="tools">
+					<form class="form-inline " role="form">
+						<!-- <div class="form-group">
+							<label>业务域：</label> <input type="text" class="form-control"
+								ng-model="domain.name"  placeholder="业务域名称">
+						</div> -->
+						<div class="form-group">
+							
+							<button type="button" class="btn btn-sm btn-primary"
+								ng-click="query()">搜索</button>
+								<button type="button" class="btn btn-sm btn-info" ng-click="doClear()">清空</button>
+							<button type="button" class="btn btn-sm btn-warning"
+								ng-click="addClick()">添加</button>
+						</div>
+					</form>
+                </div>
+            </div>
+            <!-- BEGGING PORTLET-BODY -->
+            <div class="portlet-body form">
+                <ez-data-grid height="350"></ez-data-grid>
+            </div>
+        </div>
+    </div>
+    <!-- END RIGHT -->
+</div>

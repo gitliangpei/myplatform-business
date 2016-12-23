@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"   "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="LeaveDao">
+
+	<typeAlias alias="LeavePO" type="com.tjpld.yg.config.activiti.pojo.LeavePO" />
+	
+	<resultMap id="queryResult" class="LeavePO">
+		<result property="id" column="ID" />
+		<result property="processInstanceId" column="PROCESS_INSTANCE_ID" />
+		<result property="userId" column="USER_ID" />
+		<result property="startTime" column="START_TIME" />
+		<result property="endTime" column="END_TIME" />
+		<result property="realityStartTime" column="REALITY_START_TIME" />
+		<result property="realityEndTime" column="REALITY_END_TIME" />
+		<result property="applyTime" column="APPLY_TIME" />
+		<result property="leaveType" column="LEAVE_TYPE" />
+		<result property="reason" column="REASON" />
+    </resultMap>
+    
+    <!-- 查询全部 -->
+	<select id="query" resultMap="queryResult" parameterClass="java.util.HashMap">
+	<![CDATA[ 
+	   SELECT 
+O.PROCESS_INSTANCE_ID, O.USER_ID, O.START_TIME, 
+   O.END_TIME, O.APPLY_TIME, O.LEAVE_TYPE, 
+   O.REASON, O.REALITY_START_TIME, O.REALITY_END_TIME, 
+   O.ID
+FROM OA_LEAVE O
+		  ]]>
+	</select>
+	
+    <!-- 查询代办记录 -->
+	<select id="queryTask" resultMap="queryResult" parameterClass="String">
+	<![CDATA[ 
+	    SELECT 
+O.PROCESS_INSTANCE_ID, O.USER_ID, O.START_TIME, 
+   O.END_TIME, O.APPLY_TIME, O.LEAVE_TYPE, 
+   O.REASON, O.REALITY_START_TIME, O.REALITY_END_TIME, 
+   O.ID
+FROM OA_LEAVE O WHERE O.ID IN ($value$)
+		  ]]>
+	</select>
+	
+	<insert id="insert" parameterClass="LeavePO">
+    <![CDATA[
+   		INSERT INTO OA_LEAVE (
+   PROCESS_INSTANCE_ID, USER_ID, START_TIME, 
+   END_TIME, APPLY_TIME, LEAVE_TYPE, 
+   REASON, REALITY_START_TIME, REALITY_END_TIME, 
+   ID) 
+VALUES (#processInstanceId#,#userId#,#startTime#,#endTime#,#applyTime#,#leaveType#,#reason#,#realityStartTime#,#realityEndTime#,#id#)
+    ]]>
+    </insert>
+    
+    <update id="update" parameterClass="LeavePO">
+    <![CDATA[
+   		UPDATE OA_LEAVE SET
+       PROCESS_INSTANCE_ID   = #processInstanceId#
+       WHERE ID = #id#
+    ]]>
+    </update>
+    
+    <delete id="delete" parameterClass="String">
+         DELETE FROM OA_LEAVE where ID = #id#
+	</delete>
+    
+    
+    
+
+</sqlMap>  

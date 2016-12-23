@@ -1,0 +1,60 @@
+<div class="modal-header">
+	<h3 class="modal-title">{{title}}</h3>
+</div>
+<div class="modal-body">
+	<form role="form" name="form" class="form-horizontal form-validation">
+		<div class="form-group">
+			<div class="form-body">
+				<div class="form-group">
+					<label class="col-md-2 control-label">权限名称</label>
+					<div class="col-md-8">
+						<input type="text" class="form-control" placeholder="权限名称"
+							ng-model="permisData.name" required> <span
+							class="help-block">必填</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-2 control-label">权限简称</label>
+					<div class="col-md-8">
+						<input type="text" class="form-control" placeholder="权限简称"
+							ng-model="permisData.abbr" required> <span
+							class="help-block">必填</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-2 control-label">项目别名</label>
+					<div class="col-md-8">
+						<input type="text" class="form-control" placeholder="项目别名"
+							ng-model="permisData.alias" required> <span
+							class="help-block">必填</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-2 control-label">权限编码</label>
+					<div class="col-md-3">
+						<input type="text" class="form-control" placeholder="权限编码"
+							ng-model="permisData.permissionCode"> <span
+							class="help-block">选填</span>
+					</div>
+					<label class="col-md-2 control-label">显示顺序</label>
+					<div class="col-md-3">
+						<input type="number" class="form-control" placeholder="显示顺序"
+							ng-model="permisData.displayNum"> <span class="help-block">选填</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-2 control-label">备注</label>
+					<div class="col-md-8">
+						<textarea rows="3" cols="" class="form-control"
+							placeholder="1000字以内" ng-model="permisData.remark"></textarea>
+						<span class="help-block">选填</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+<div class="modal-footer">
+	<button type="submit" class="btn btn-primary" ng-click="confirm(form.$valid)">确定</button>
+	<button class="btn btn-default" ng-click="cancel()">取消</button>
+</div>

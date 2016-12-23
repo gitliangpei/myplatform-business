@@ -1,0 +1,63 @@
+<link rel="stylesheet" href="../assets/global/css/combo.css" type="text/css" />
+<div class="modal-header">
+	<h3 class="modal-title">{{title}}</h3>
+</div>
+<div class="modal-body">
+	<form role="form" name="form" class="form-horizontal form-validation">
+		<div class="form-group">
+			<div class="form-body">
+				<div class="form-group">
+					<label class="col-md-2 control-label">资源名称</label>
+					<div class="col-md-3">
+						<input type="text" class="form-control" placeholder="资源名称"
+							ng-model="resData.name"> <span
+							class="help-block">必填</span>
+					</div>
+					<label class="col-md-2 control-label">资源类型</label>
+					<div class="col-md-3">
+						<select class="form-control" ng-model="initType.id"
+							ng-options="type.id as type.name for type in resTypes"></select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-2 control-label">资源编码</label>
+					<div class="col-md-3">
+						<input type="text" class="form-control" placeholder="资源编码"
+							ng-model="resData.resCode"> <span
+							class="help-block">选填</span>
+					</div>
+					<label class="col-md-2 control-label">显示顺序</label>
+					<div class="col-md-3">
+						<input type="number" class="form-control" placeholder="显示顺序"
+							ng-model="resData.displayNum"> <span class="help-block">选填</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-2 control-label">权限字</label>
+					<div class="col-md-8">
+						<ui-select multiple ng-model="selectPermissions" on-select="selectFunction($item, $model)"
+						 on-remove="removeFunction($item, $model)" theme="bootstrap"> 
+							<ui-select-match placeholder="">{{$item.name}}</ui-select-match>
+							<ui-select-choices repeat="item in permissions | filter: $select.search">
+								<div ng-bind-html="item.name | highlight: $select.search"></div>
+								<!-- <small ng-bind-html="item.id | highlight: $select.search"></small> -->
+							</ui-select-choices> 
+						</ui-select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-2 control-label">备注</label>
+					<div class="col-md-8">
+						<textarea rows="3" cols="" class="form-control"
+							placeholder="1000字以内" ng-model="resData.remark"></textarea>
+						<span class="help-block">选填</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+<div class="modal-footer">
+	<button type="submit" class="btn btn-primary" ng-click="confirm(form.$valid)">确定</button>
+	<button class="btn btn-default" ng-click="cancel()">取消</button>
+</div>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="MetronicApp">
+<head>
+	<meta charset="UTF-8">
+	<title>统一权限平台</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <!-- ********** BEGIN GLOBAL MANDATORY STYLES ********** -->
+    <link rel="stylesheet" type="text/css" href="../vendor/fonts-googleapis-opensans/css/fonts-local.css" />
+    <link rel="stylesheet" type="text/css" href="../vendor/font-awesome-4.6.3/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="../vendor/simple-line-icons-2.3.2/css/simple-line-icons.css" />
+    <link rel="stylesheet" type="text/css" href="../vendor/bootstrap-3.3.5/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../vendor/bootstrap-3.3.5/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="../vendor/bootstrap-switch-3.3.2/css/bootstrap3/bootstrap-switch.min.css" />
+    <!-- ********** END GLOBAL MANDATORY STYLES ********** -->
+    
+    <link rel="stylesheet" href="../vendor/jquery-easyui-1.5/themes/bootstrap/linkbutton.css" type="text/css" />
+    <link rel="stylesheet" href="../vendor/jquery-easyui-1.5/themes/bootstrap/datagrid.css" type="text/css" />
+	<link rel="stylesheet" href="../vendor/jquery-easyui-1.5/themes/bootstrap/tree.css" type="text/css" />
+	<link rel="stylesheet" href="../vendor/jquery-easyui-1.5/themes/bootstrap/pagination.css" type="text/css" />
+	<link rel="stylesheet" href="../vendor/jquery-easyui-1.5/themes/icon.css" type="text/css" />
+	<link rel="stylesheet" href="../vendor/jquery-easyui-1.5/themes/bootstrap/layout.css" type="text/css" />
+	<link rel="stylesheet" href="../vendor/jquery-easyui-1.5/themes/bootstrap/easyui.css" type="text/css" />
+    <link rel="stylesheet" href="../vendor/angularjs-toaster/toaster.css" type="text/css" />
+    
+    
+    <link rel="stylesheet" type="text/css" href="../vendor/angular-ui-grid/ui-grid.min.css" />
+     <link rel="stylesheet" type="text/css" href="../vendor/angular-ui-grid/ui-grid.bootstrap.css" />
+     <link rel="stylesheet" type="text/css" href="../vendor/ngJsTree/themes/default/style.min.css" />
+     <link rel="stylesheet" type="text/css" href="../vendor/bootstrap-fileinput/bootstrap-fileinput.css" />
+     <link rel="stylesheet" type="text/css" href="../vendor/bootstrop-pages/profile.min.css" />
+     
+    <!-- ********** BEGIN DYMANICLY LOADED CSS FILES(all plugin and page related styles must be loaded between GLOBAL and THEME css files ) ********** -->
+    <link id="ng_load_plugins_before" />
+    <!-- ********** END DYMANICLY LOADED CSS FILES ********** -->
+    <!-- ********** BEGIN THEME STYLES ********** -->
+    <!-- DOC: To use 'rounded corners' style just load 'components-rounded.css' stylesheet instead of 'components.css' in the below style tag -->
+    <link rel="stylesheet" type="text/css" href="../assets/global/css/components.min.css" id="style_components" />
+    <link rel="stylesheet" type="text/css" href="../assets/global/css/plugins.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/layouts/layout/css/layout.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/layouts/layout/css/themes/default.min.css" id="style_color" />
+    <link rel="stylesheet" type="text/css" href="../assets/layouts/layout/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../vendor/angular-xeditable/css/xeditable.css" />
+    <link rel="stylesheet" type="text/css" href="../vendor/bootstrap-select/css/bootstrap-select.min.css" />
+<link rel="stylesheet" type="text/css" href="../vendor/jquery-multi-select/css/multi-select.css" />
+<link rel="stylesheet" type="text/css" href="../vendor/select2/css/select2.min.css" />
+<link rel="stylesheet" type="text/css" href="../vendor/select2/css/select2-bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="../assets/global/css/modal.css" />
+    <!-- ********** END THEME STYLES ********** -->
+    <link rel="shortcut icon" href="../favicon.ico" />
+</head>
+<body ng-controller="AppController" class="page-header-fixed page-sidebar-closed-hide-logo page-on-load" ng-class="{'page-content-white': settings.layout.pageContentWhite, 'page-container-bg-solid': settings.layout.pageBodySolid, 'page-sidebar-closed': settings.layout.pageSidebarClosed}">
+    <!-- BEGIN PAGE SPINNER -->
+    <div ng-spinner-bar class="page-spinner-bar">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+    </div>
+    <!-- END PAGE SPINNER -->
+    <!-- BEGIN HEADER -->
+    <div data-ng-include="'tpl/header.html'" data-ng-controller="HeaderController" class="page-header navbar navbar-fixed-top"> </div>
+    <!-- END HEADER -->
+
+    <div class="clearfix"> </div>
+
+    <!-- BEGIN CONTAINER -->
+    <div class="page-container">
+        <!-- BEGIN SIDEBAR -->
+        <div data-ng-include="'tpl/sidebar.html'" data-ng-controller="SidebarController" class="page-sidebar-wrapper"> </div>
+        <!-- END SIDEBAR -->
+
+        <!-- BEGIN CONTENT -->
+        <div class="page-content-wrapper">
+            <div class="page-content">
+                <!-- BEGIN STYLE CUSTOMIZER(optional) -->
+                <div data-ng-include="'tpl/theme-panel.html'" data-ng-controller="ThemePanelController" class="theme-panel hidden-xs hidden-sm"> </div>
+                <!-- END STYLE CUSTOMIZER -->
+                <!-- toaster directive -->
+				  <toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+				  <!-- / toaster directive -->
+                <!-- BEGIN ACTUAL CONTENT -->
+                <div ui-view class="fade-in-up"> </div>
+                <!-- END ACTUAL CONTENT -->
+            </div>
+        </div>
+        <!-- END CONTENT -->
+
+        <!-- BEGIN QUICK SIDEBAR -->
+        <a href="javascript:;" class="page-quick-sidebar-toggler">
+            <i class="icon-login"></i>
+        </a>
+        <div data-ng-include="'tpl/quick-sidebar.html'" data-ng-controller="QuickSidebarController" class="page-quick-sidebar-wrapper"></div>
+        <!-- END QUICK SIDEBAR -->
+    </div>
+    <!-- END CONTAINER -->
+
+    <!-- BEGIN FOOTER -->
+    <div data-ng-include="'tpl/footer.html'" data-ng-controller="FooterController" class="page-footer"> </div>
+    <!-- END FOOTER -->
+
+
+    <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+    <!-- BEGIN CORE JQUERY PLUGINS -->
+    <!--[if lt IE 9]>
+    <script src="../vendor/respond-1.4.2/respond.min.js"></script>
+    <script src="../vendor/excanvas-r3/excanvas.compiled.js"></script> 
+    <![endif]-->
+	<!-- ********** BEGIN CORE JQUERY PLUGINS ********** -->
+	<script type="text/javascript" src="../vendor/jquery-1.12.4/jquery.min.js"></script>
+	<script type="text/javascript" src="../vendor/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../vendor/bootstrap-hover-dropdown-2.2.1/bootstrap-hover-dropdown.min.js"></script>
+    <script type="text/javascript" src="../vendor/jquery-slimscroll-1.3.8/jquery.slimscroll.min.js"></script>
+    <script type="text/javascript" src="../vendor/jquery-blockui-2.70/jquery.blockUI.min.js"></script>
+    <script type="text/javascript" src="../vendor/js.cookie-2.1.2/js.cookie.min.js"></script>
+    <script type="text/javascript" src="../vendor/bootstrap-switch-3.3.2/js/bootstrap-switch.min.js"></script>
+    <!-- ********** END CORE JQUERY PLUGINS ********** -->
+    <script src="../vendor/moment/moment-with-locales.js"></script>
+    <!-- easyui -->
+	<script src="../vendor/jquery-easyui-1.5/jquery.easyui.min.js"></script>
+	<script src="../vendor/jquery-easyui-1.5/locale/easyui-lang-zh_CN.js"></script>
+	
+    <!-- ********** BEGIN CORE ANGULARJS PLUGINS ********** -->
+    <script type="text/javascript" src="../vendor/angular-1.4.7/angular.min.js"></script>
+    <script type="text/javascript" src="../vendor/angular-1.4.7/angular-resource.min.js"></script>
+    <script type="text/javascript" src="../vendor/angular-1.4.7/angular-sanitize.min.js"></script> 
+    <script type="text/javascript" src="../vendor/angular-cookies/angular-cookies.js"></script>
+    <script type="text/javascript" src="../vendor/angularjs-toaster/toaster.js"></script>
+<!--     <script type="text/javascript" src="../vendor/angular-strap/angular-strap.min.js"></script>
+    <script type="text/javascript" src="../vendor/angular-strap/angular-strap.tpl.min.js"></script> -->
+    <!-- 
+    <script type="text/javascript" src="../vendor/angular-1.4.7/angular-touch.min.js"></script> 
+    -->
+    <script type="text/javascript" src="../vendor/angular-ui-router-0.3.1/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="../vendor/angular-ocLazyLoad-1.0.9/ocLazyLoad.min.js"></script>
+    <script type="text/javascript" src="../vendor/angular-bootstrap-1.3.3/ui-bootstrap-tpls.min.js"></script>
+    <script type="text/javascript" src="../vendor/angular-bootstrap-1.3.3/ui-bootstrap-tpls.js"></script>
+    
+     <script type="text/javascript" src="../vendor/ngJsTree/jstree.min.js"></script>
+    <script type="text/javascript" src="../vendor/ngJsTree/ngJsTree.min.js"></script>
+    <script type="text/javascript" src="../vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="../vendor/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script type="text/javascript" src="../vendor/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min.js"></script>
+    <script type="text/javascript" src="../vendor/bootstrap-fileinput/bootstrap-fileinput.js"></script>
+    <script type="text/javascript" src="../vendor/angular-file-upload/angular-file-upload.js"></script>
+    <script type="text/javascript" src="../vendor/angular-xeditable/js/bootstrap-editable.js"></script>
+    <script type="text/javascript" src="../vendor/angular-xeditable/js/xeditable.js"></script>
+    <script type="text/javascript" src="../vendor/select2/js/select2.full.min.js"></script>
+    <script type="text/javascript" src="../vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
+    <script type="text/javascript" src="../vendor/jquery-multi-select/js/jquery.multi-select.js"></script>
+    
+    <!-- ********** END CORE ANGULARJS PLUGINS ********** -->
+    <!-- ********** BEGIN APP LEVEL ANGULARJS SCRIPTS ********** -->
+    <script type="text/javascript" src="./main.js"></script>
+    <script type="text/javascript" src="./directives.js"></script>
+    <!-- ********** END APP LEVEL ANGULARJS SCRIPTS ********** -->
+    <!-- ********** BEGIN APP LEVEL JQUERY SCRIPTS ********** -->
+    <script type="text/javascript" src="../assets/global/scripts/app.js"></script>
+    <script type="text/javascript" src="../assets/global/scripts/common.js"></script>
+    <script type="text/javascript" src="../assets/global/scripts/directives/security/auth.js"></script>
+    <script type="text/javascript" src="../assets/layouts/layout/scripts/layout.min.js"></script>
+    <script type="text/javascript" src="../assets/layouts/global/scripts/quick-sidebar.min.js"></script>
+    <script type="text/javascript" src="../assets/layouts/layout/scripts/demo.min.js"></script>
+    <script type="text/javascript" src="../assets/pages/scripts/ui-confirmations.min.js"></script>
+    
+    <!-- ********** END APP LEVEL JQUERY SCRIPTS ********** -->
+    
+    
+</body>
+</html>

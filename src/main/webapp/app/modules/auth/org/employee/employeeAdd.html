@@ -1,0 +1,228 @@
+
+<!-- BEGIN HEADER & CONTENT DIVIDER -->
+<div class="clearfix"> </div>
+<!-- END HEADER & CONTENT DIVIDER -->
+<!-- BEGIN CONTAINER -->
+ 
+<div class="page-container"> 
+    <!-- BEGIN CONTENT -->    
+        <!-- BEGIN CONTENT BODY -->
+        <div class="page-content">
+            <div class="row">
+                <div class="col-md-12">                          
+                    <!-- BEGIN PROFILE CONTENT -->
+                    <div class="profile-content">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="portlet light ">
+                                    <div class="portlet-title tabbable-line">
+                                        <div class="caption caption-md">
+                                            <h3 class="modal-title ng-binding">配置账户 </h3>
+                                        </div>
+                                        <ul class="nav nav-tabs">
+                                            <li class="active">
+                                                <a href="javascript:void(0)" id="personal" data-target="#tab_personal" data-toggle="tab">个人信息</a>
+                                            </li>
+                                            <li >
+                                                <a href="javascript:void(0)" id="selectStd" data-target="#tab_selectStd" data-toggle="tab" ng-init="name='name2'">选择机构</a>
+                                            </li> 
+                                            <li>
+                                                <a href="javascript:void(0)" id="uploadImg"data-target="#tab_uploadImg" data-toggle="tab">上传照片</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)" id="changeAccount" data-target="#tab_account" data-toggle="tab" ng-click="accountInit='a1'">{{accountName}}</a>
+                                            </li>
+                                             
+                                        </ul>
+                                    </div>
+                                    <div class="portlet-body">
+                                        <div class="tab-content">
+                                            <!-- PERSONAL INFO TAB -->
+                                            <div class="tab-pane active " id="tab_personal">
+                                                <form role="form" action="#" name="personalForm">
+                                                    <div class="form-group col-md-4">
+                                                        <label class="control-label">真实姓名  *</label>
+                                                        <input type="text" placeholder="真实姓名" class="form-control" 
+                                                        ng-model="employee.realName" required />
+													</div>
+                                                    <div class="form-group col-md-4">
+                                                        <label class="control-label">身份证号  *</label>
+                                                        <input type="text" placeholder="身份证号" class="form-control" 
+                                                        ng-model="employee.identification" required /> </div>    
+                                                    <div class="form-group col-md-4">
+                                                        <label class="control-label">昵称  </label>
+                                                        <input type="text" placeholder="昵称" class="form-control"
+                                                        ng-model="employee.nickName" /> </div>
+                                                    <div class="form-group col-md-4">
+                                                        <label class="control-label">姓名拼写  *</label>
+                                                        <input type="text" placeholder="姓名拼写" class="form-control"
+                                                        ng-model="employee.spell"  /> </div>
+                                                    <div class="form-group  col-md-4">
+                                                        <label class="control-label">曾用名  </label>
+                                                        <input type="text" placeholder="D曾用名" class="form-control" 
+                                                        ng-model="employee.former" /> </div>
+                                                  
+                                                    <div class="form-group  col-md-4">
+                                                        <label class="control-label">员工统一编码  *</label>
+                                                        <input type="text" placeholder="员工统一编码" class="form-control"
+                                                        ng-model="employee.guId" required />
+                                                    </div>
+                                                    <div class="form-group  col-md-4">
+                                                        <label class="control-label">性别  *</label>
+                                                        <select class="form-control" ng-model="employee.gender" placeholder="性别"
+						                                ng-options="gender.id as gender.name  for gender in genders" required></select> 
+						                            </div>
+						                            <div class="form-group col-md-4" >
+                                                        <label class="control-label">出生日期  *</label>                 
+                                                        <input class="form-control form-control-inline  date-picker"
+															size="16" type="text"  data-date-format="yyyy-mm-dd"  ng-model="birthday" style="width:255.98px" required/>
+					                                </div>
+                                                    <div class="form-group col-md-4">
+                                                        <label class="control-label">出生地  *</label>
+                                                        <input type="text" placeholder="出生地" class="form-control"
+                                                        ng-model="employee.birthPlace" required />
+                                                    </div>
+                                                    <div class="form-group  col-md-4">
+                                                        <label class="control-label">民族  *</label>
+                                                        <input type="text" placeholder="民族" class="form-control"
+                                                        ng-model="employee.nation" required />
+                                                    </div>
+                                                     <div class="form-group col-md-4">
+                                                        <label class="control-label">固定电话  </label>
+                                                        <input type="text" placeholder="固定电话" class="form-control"
+                                                        ng-model="employee.telephone"  />
+                                                    </div>
+                                                     <div class="form-group col-md-4">
+                                                        <label class="control-label">移动电话  *</label>
+                                                        <input type="text" placeholder="移动电话" class="form-control"
+                                                        ng-model="employee.mobile" required />
+                                                    </div>
+                                                    <div class="form-group col-md-4">
+                                                        <label class="control-label">电子传真</label>
+                                                        <input type="text" placeholder="电子传真" class="form-control"
+                                                        ng-model="employee.fax"  />
+                                                    </div>
+                                                    <div class="form-group col-md-4">
+                                                        <label class="control-label">电子邮箱  *</label>
+                                                        <input type="text" placeholder="电子邮箱" class="form-control"
+                                                        ng-model="employee.email" required />
+                                                    </div>
+                                                    <div class="form-group col-md-4">
+                                                        <label class="control-label">备注</label>
+                                                        <input type="text" placeholder="备注" class="form-control"
+                                                        ng-model="employee.remark" />
+                                                    </div>
+                                                    <div class="clearfix"></div>   
+                                                        <div style="margin-top:4%">
+	                                                        <input type="button" class="btn green" style="display:inline;margin-left:83%" ng-click="confirm(personalForm.$valid)" 
+	                                                        ng-disabled="personalForm.$invalid" value="确定" />
+		                                                    <input type="button" class="btn btn-default" style="display:inline;margin-left:1%" ng-click="cancel()" value="取消"  >
+                                                       </div>
+                                                </form>
+                                            </div>
+                                            <!-- END PERSONAL INFO TAB -->
+                                           <div class="tab-pane" id="tab_selectStd" >
+												<form action="#" name="stdForm">
+													<div id="stdTreeview" class="tree-demo"></div>	
+                                                    <div style="margin-top:29%">
+                                                       <input type="button" class="btn green" style="display:inline;margin-left:83%" ng-click="ok(stdForm.$valid)" 
+                                                       ng-disabled="stdForm.$invalid" value="确定" />
+                                                       <input type="button" class="btn btn-default" style="display:inline;margin-left:1%" ng-click="cancel()" value="取消"  >
+                                                    </div>
+												</form>
+                                           </div>
+                                            <!-- CHANGE AVATAR TAB -->
+                                            <div class="tab-pane" id="tab_uploadImg">
+                                                <form action="#" role="form">
+				                                       <div class="form-group m-b-xs">
+														    <div class="col-md-6">
+																<div class="col-sm-12">
+																	<div class="col-sm-3 text-right control-label">
+																			<input type="button" class="btn m-b-xs btn-sm btn-info btn-addon fa fa-cloud-upload"
+																			id="imgBtnFile" ng-click="imgButton('true')" value="上传图片"/>
+																		<div style="display:none">
+																			<input ui-jq="filestyle" type="file" data-icon="false"
+																				accept="image/*" data-classButton="btn btn-default"
+																				id="imgFile" nv-file-select="" multiple uploader="uploader"
+																				data-classInput="form-control inline v-middle input-s">
+																		</div>
+																	</div>
+																	<div class="col-sm-5" >
+																		<div ng-controller="CarouselDemoCtrl" class="panel b-a"
+																			set-ng-animate="false" style="height: 200px; width: 200px">
+																			<carousel interval="myInterval"> <slide>
+																			<img src="{{currentItem.imgUrl}}"
+																				style="margin: auto; height: 200px; width: 200px"
+																				class="img-full" />
+					
+																			<button type="button" ng-click="delPic(u)"
+																				style="position: absolute; bottom: 0px; right: 40px; z-index: 999"
+																				class="btn btn-sm btn-icon btn-default">
+																				<i class="fa fa-trash-o"></i>
+																			</button>
+																			</slide> </carousel>
+																		</div>
+																	</div>
+															  </div>
+														 </div>
+													</div>
+													<div style="clear:both"></div> 
+                                                        <div style="margin-top:21%">
+	                                                        <input type="button" class="btn green" style="display:inline;margin-left:83%" ng-click="saveImg()" 
+	                                                        ng-disabled="{{disStatus}}" value="确定" />
+		                                                    <input type="button" class="btn btn-default" style="display:inline;margin-left:1%" ng-click="cancelImg()" value="取消"  >
+                                                       </div>
+                                                </form>
+                                            </div>
+                                            <!-- END CHANGE AVATAR TAB -->
+                                            <!-- CHANGE PASSWORD TAB -->
+                                            <div class="tab-pane" id="tab_account">
+                                                <form action="#" name="accountForm">
+                                                    <div class="form-group col-md-12">
+                                                        <label class="control-label col-md-12" style="margin-left:-15px">账户名</label>
+                                                        <input type="text" class="form-control input-medium col-md-4" ng-blur="checkUserName()" ng-model="userName"  required/>
+                                                         <span class="help-block col-md-8">{{userNameStatus}} </span></div>
+                                                    <div class="form-group col-md-12">
+                                                        <label class="control-label col-md-12" style="margin-left:-15px">{{passWordName}}</label>
+                                                        <input type="password" class="form-control input-medium col-md-4" ng-blur="checkPassword()" ng-model="passWord" required/> 
+                                                        <span class="help-block col-md-8">{{passWordStatus}}</span></div>
+                                                    <div class="form-group col-md-12" style="display:{{newPassWordShow}}">
+                                                        <label class="control-label col-md-12" style="margin-left:-15px">新密码</label>
+                                                        <input type="password" class="form-control input-medium col-md-4"  ng-model="newPassWord" required/>
+                                                        <span class="help-block col-md-8">{{NewPassWordStatus}}</span></div>
+                                                    <div class="form-group col-md-12">
+                                                        <label class="control-label col-md-12" style="margin-left:-15px">重复密码</label>
+                                                        <input type="password" class="form-control input-medium col-md-4" ng-blur="checkRepeat()" ng-model="repeatPassWord" required/> 
+                                                        <span class="help-block col-md-8">{{repeatPassWordStatus}}</span></div>
+                                                    <div class="margin-top-10">
+                                                     <div class="clearfix"></div>   
+                                                        <div style="margin-top:12%">
+	                                                        <input type="button" class="btn green" style="display:inline;margin-left:83%" ng-click="saveAccount(accountForm.$valid)" 
+	                                                        ng-disabled="{{disStatus}}" value="确定" />
+		                                                    <input type="button" class="btn btn-default" style="display:inline;margin-left:1%" ng-click="cancel()" value="取消"  >
+                                                       </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                          
+                                            <!-- END CHANGE PASSWORD TAB -->
+                                            <!-- PRIVACY SETTINGS TAB -->
+                                            
+                                            <!-- END PRIVACY SETTINGS TAB -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END PROFILE CONTENT -->
+                </div>
+            </div>
+        </div>
+        <!-- END CONTENT BODY -->
+   
+    <!-- END CONTENT -->
+ 
+</div>
+<!-- END CONTAINER -->
+

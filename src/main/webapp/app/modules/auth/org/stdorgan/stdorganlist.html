@@ -1,0 +1,57 @@
+<!-- 基准组织架构 -->
+<!-- BEGIN PAGE HEADER-->
+
+<h3 class="page-title"> 
+     基准机构管理
+</h3>
+<!-- END PAGE HEADER-->
+
+<!-- BEGIN MAIN CONTENT -->
+<div class="row">
+    <!-- BEGIN RIGHT -->
+    <div class="col-md-12">
+        <div class="portlet light bordered">
+            <div class="portlet-title">
+                <div class="row">
+					<form class="form-inline " role="form">
+						<div class="form-group col-md-8">
+							<label>基准机构：</label>
+							<input type="text" class="form-control" ng-model="moduleName" placeholder="名称">
+						</div>	
+						<div class="form-group col-md-4 pull-right" style="text-align: right">
+							<label></label>
+							<button type="button" class="btn btn-sm btn-primary" ng-click="query()">查询</button>
+							<button type="button" class="btn btn-sm btn-warning"  ng-click="doClear()">清空</button>
+						</div>
+						<div class="form-group">
+							<a type="button" class="btn btn-sm w-xs btn-info hidden"
+								ng-click="addStdorgan()">新建机构</a>
+						</div>
+					</form>
+                </div>
+            </div>
+            <!-- BEGGING PORTLET-BODY -->
+            <div class="portlet-body form">        
+				<div class="wrapper-sm">
+					<div class="panel panel-default" >  
+						<div>
+							<ez-tree-grid height="340"></ez-tree-grid>
+						</div>
+						<script type="text/ng-template"
+								id="stdorgan_workjob_add.html">
+			                 <div ng-include="'stdorgan_workjob_add.html'"></div>
+		                </script>
+					</div>
+				</div>
+            </div>
+        </div>
+    </div>
+    <!-- END RIGHT -->
+</div>
+
+
+
+
+
+
+

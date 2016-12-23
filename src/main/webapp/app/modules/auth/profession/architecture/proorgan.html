@@ -1,0 +1,75 @@
+<!-- BEGIN PAGE HEADER-->
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <a href="#/dashboard.html">Home</a>
+        </li>
+        <li>
+            <i class="fa fa-circle"></i>
+            <a href="#/tree">jQuery Plugins</a>
+        </li>
+        <li>
+            <i class="fa fa-circle"></i>
+            <a href="#/tree">Tree View</a>
+        </li>
+    </ul>
+    <div class="page-toolbar">
+        <div class="btn-group pull-right">
+            <button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" dropdown-menu-hover data-delay="1000" data-close-others="true"> Actions
+                <i class="fa fa-angle-down"></i>
+            </button>
+            <ul class="dropdown-menu pull-right" role="menu">
+                <li>
+                    <a href="#">
+                        <i class="icon-user"></i> New User </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-present"></i> New Event
+                        <span class="badge badge-success">4</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-basket"></i> New order </a>
+                </li>
+                <li class="divider"> </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-flag"></i> Pending Orders
+                        <span class="badge badge-danger">4</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-users"></i> Pending Users
+                        <span class="badge badge-warning">12</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<h3 class="page-title"> 业务组织架构
+    <small>业务体系</small>
+</h3>
+<!-- END PAGE HEADER-->
+<!-- BEGIN MAIN CONTENT -->
+<div class="row">
+    <div class="col-md-12">
+        <div>
+            <div id="toolbar" style="padding:2px 5px;">
+                业务域: 
+                <select class="easyui-combobox" panelHeight="auto" style="width:100px">
+                    <option value="java">Java</option>
+                    <option value="c">C</option>
+                    <option value="basic">Basic</option>
+                    <option value="perl">Perl</option>
+                    <option value="python">Python</option>
+                </select>
+                <a href="#" class="easyui-linkbutton" iconCls="icon-search">Search</a>
+            </div>
+        </div>
+        <div easyui-tree-grid></div>
+    </div>
+</div>

@@ -1,0 +1,107 @@
+<div  controlled-rescode="crud" call-back="test(data)">
+
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <a href="#/dashboard.html">Home</a>
+        </li>
+        <li>
+            <i class="fa fa-circle"></i>
+            <a href="#/tree">jQuery Plugins</a>
+        </li>
+        <li>
+            <i class="fa fa-circle"></i>
+            <a href="#/tree">Tree View</a>
+        </li>
+    </ul>
+    <div class="page-toolbar">
+        <div class="btn-group pull-right">
+            <button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" dropdown-menu-hover data-delay="1000" data-close-others="true"> Actions
+                <i class="fa fa-angle-down"></i>
+            </button>
+            <ul class="dropdown-menu pull-right" role="menu">
+                <li>
+                    <a href="#">
+                        <i class="icon-user"></i> New User </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-present"></i> New Event
+                        <span class="badge badge-success">4</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-basket"></i> New order </a>
+                </li>
+                <li class="divider"> </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-flag"></i> Pending Orders
+                        <span class="badge badge-danger">4</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-users"></i> Pending Users
+                        <span class="badge badge-warning">12</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<h3 class="page-title"> 示例
+    <small>crud</small>
+</h3>
+<!-- END PAGE HEADER-->
+
+<!-- BEGIN MAIN CONTENT -->
+<div class="row">
+    <!-- BEGIN RIGHT -->
+    <div class="col-md-12">
+        <div class="portlet light bordered">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-cogs font-green-sharp"></i>
+                    <span class="caption-subject font-green-sharp bold uppercase">列表</span>
+                </div>
+                <div class="tools">
+					<form class="form-inline " role="form">
+						<div class="form-group">
+							<label>图文组名称：</label>
+							<input type="text" class="form-control" ng-model="groupName" placeholder="名称">
+						</div>
+						<div class="form-group">
+							<label>类型：</label>
+							<select class="form-control " ng-model="selectedGroupType" ng-options="gType.name for gType in gTypes" ></select>
+						</div>
+						<div class="form-group">
+							<label>状态：</label>
+							<select class="form-control " ng-model="selectedStatus" ng-options="gStatus.name for gStatus in gStatuses" ></select>
+						</div>
+						<div class="form-group">
+							<label></label>
+							<button type="button" class="btn btn-sm btn-primary auth-query" ng-click="query()">查询</button>
+							<button type="button" class="btn btn-sm btn-warning"  ng-click="doClear()">清空</button>
+						</div>
+						<div class="form-group auth-create">
+							<a type="button" class="btn btn-sm w-xs btn-info"
+								ui-sref="detail">新建图文消息</a>
+						</div>
+					</form>
+                </div>
+            </div>
+            <!-- BEGGING PORTLET-BODY -->
+            <div class="portlet-body form">
+                <ez-data-grid id="grid1" ></ez-data-grid>
+                <!-- 第二个表格
+               <ez-data-grid id="grid2" grid-option="gridOption2"></ez-data-grid>
+                -->
+            </div>
+        </div>
+    </div>
+    <!-- END RIGHT -->
+</div>
+
+</div>

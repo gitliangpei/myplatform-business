@@ -1,0 +1,77 @@
+<div class="hbox hbox-auto-xs hbox-auto-sm">
+	<div class="">
+		<h3 class="page-title">
+			示例 <small>{{editWay}}</small>
+		</h3>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="portlet light bordered">
+					<div class="portlet-title">
+						<div class="caption">
+							<i class="fa fa-cogs font-green-sharp"></i> <span
+								class="caption-subject font-green-sharp bold uppercase">图文消息</span>
+						</div>
+						<div class="tools">
+							<a href="javascript:;" class="collapse"> </a> 
+							<a href="#portlet-config" data-toggle="modal" class="config"> </a>
+							<a href="javascript:;" class="reload"> </a> 
+							<a href="javascript:;" class="remove"> </a>
+						</div>
+					</div>
+					<!-- BEGGING PORTLET-BODY -->
+					<div class="portlet-body form">
+						<!-- FORM 2 -->
+						<form class="form-horizontal form-validation" name="form">
+							<div class="form-body">
+								<div class="form-group">
+									<label class="col-md-3 control-label">图文组类型</label>
+									<div class="col-md-9">
+										<select class="form-control"
+												ng-model="initData.groupType"
+												ng-options="groupType.id as groupType.name for groupType in groupTypes" required></select>
+									    <span class="help-block">必填，请选择一种类型 </span>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-md-3 control-label">图文组名称</label>
+									<div class="col-md-9">
+										<input type="text" class="form-control"
+												placeholder="请输入图文组名称" ng-model="viewData.groupName"
+												required>
+										<span class="help-block">必填</span>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-md-3 control-label">图文组状态</label>
+									<div class="col-md-9">
+										<select class="form-control" ng-model="initData.status"
+												ng-options="status.id as status.name for status in gStatuses"></select>
+										<span class="help-block">必填</span>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-md-3 control-label">图文组发布时间</label>
+									<div class="col-md-9">
+										<input type="text" class="form-control"
+												placeholder="发布时间" ng-model="viewData.releaseDate"> 
+										<span class="help-block">选填</span>
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-4 control-label"></label>
+								<div class="col-sm-8 text-right">
+									<button type="submit" class="btn btn-sm btn-primary"
+										ng-click="confirm(form.$valid)">确定</button>
+									<button type="button" class="btn btn-sm btn-danger"
+										ng-click="cancel()">取消</button>
+								</div>
+							</div>
+						</form>
+					</div>
+					<!-- END PORTLET-BODY -->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

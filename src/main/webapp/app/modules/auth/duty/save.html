@@ -1,0 +1,76 @@
+<link rel="stylesheet" href="../assets/global/css/combo.css" type="text/css" />
+<div class="modal-header">
+	<h3 class="modal-title">{{title}}</h3>
+</div>
+<div class="modal-body">
+	<form role="form" name="form" class="form-horizontal form-validation">
+		<div class="form-group">
+			<div class="form-body">
+				<div class="form-group">
+					<label class="col-md-2 control-label">职责名称</label>
+					<div class="col-md-3">
+						<input type="text" class="form-control" placeholder="职责名称"
+							ng-model="duty.name"> <span
+							class="help-block">必填</span>
+					</div>
+					<label class="col-md-2 control-label">业务域</label>
+					<div class="col-md-3">
+						<select class="form-control" ng-model="domainId"
+							ng-options="domain.domainId as domain.name for domain in domains"></select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-2 control-label">简称</label>
+					<div class="col-md-3">
+						<input type="text" class="form-control" placeholder="职责简称"
+							ng-model="duty.abbr"> <span
+							class="help-block">选填</span>
+					</div>
+					<label class="col-md-2 control-label">别名</label>
+					<div class="col-md-3">
+						<input type="text" class="form-control" placeholder="职责别名"
+							ng-model="duty.alias"> <span class="help-block">选填</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-2 control-label">编码</label>
+					<div class="col-md-3">
+						<input type="text" class="form-control" placeholder="职责编码"
+							ng-model="duty.dutyCode"> <span
+							class="help-block">选填</span>
+					</div>
+					<label class="col-md-2 control-label">显示顺序</label>
+					<div class="col-md-3">
+						<input type="number" class="form-control" placeholder="显示顺序"
+							ng-model="duty.displayNum"> <span class="help-block">选填</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-2 control-label">角色</label>
+					<div class="col-md-8">
+						<ui-select multiple ng-model="selectRoles" on-select="selectRole($item, $model)"
+						 on-remove="removeRole($item, $model)" theme="bootstrap"> 
+							<ui-select-match placeholder="">{{$item.name}}</ui-select-match>
+							<ui-select-choices repeat="item in roles | filter: $select.search">
+								<div ng-bind-html="item.name | highlight: $select.search"></div>
+								<!-- <small ng-bind-html="item.id | highlight: $select.search"></small> -->
+							</ui-select-choices> 
+						</ui-select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-2 control-label">备注</label>
+					<div class="col-md-8">
+						<textarea rows="3" cols="" class="form-control"
+							placeholder="1000字以内" ng-model="duty.remark"></textarea>
+						<span class="help-block">选填</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+<div class="modal-footer">
+	<button type="submit" class="btn btn-primary" ng-click="confirm(form.$valid)">确定</button>
+	<button class="btn btn-default" ng-click="cancel()">取消</button>
+</div>

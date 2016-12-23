@@ -1,0 +1,12 @@
+/*禁止模态框出现y轴滚动条*/
+.modal-open .modal {
+	overflow-x: hidden;
+	overflow-y: hidden !important;
+}
+
+.portlet-body .tab-content {
+	overflow: scroll;
+    overflow-x: auto;
+    overflow-y: scroll;
+    height: 450px;
+}

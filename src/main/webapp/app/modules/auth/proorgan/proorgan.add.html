@@ -1,0 +1,42 @@
+<div class="modal-header">
+	<h3 class="modal-title">{{title}}</h3>
+</div>
+<div class="modal-body">
+	<form role="form" name="form" class="form-horizontal form-validation">
+		<div class="form-group">
+			<label class="col-sm-3 control-label">名称：</label>
+			<div class="col-sm-7">
+				<input type="text" class="form-control" ng-model="proorgan.name"
+					required>
+				<span class="help-block">必填 </span>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-3 control-label">简称：</label>
+			<div class="col-sm-7">
+				<input type="text" class="form-control" ng-model="proorgan.abbr">
+				<span class="help-block">选填 </span>	
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-3 control-label">业务编码：</label>
+			<div class="col-sm-7">
+				<input type="text" class="form-control" ng-model="proorgan.procode">
+				<span class="help-block">选填 </span>	
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-3 control-label">备注信息：</label>
+			 <div class="col-sm-7">
+				<input type="text" class="form-control" ng-model="proorgan.remark"
+					>
+					<span class="help-block">选填 </span>	
+			</div> 
+		</div>
+	</form>
+</div>
+<div class="modal-footer">
+	<button type="submit" class="btn btn-primary" ng-click="ok(form.$valid,domain)"
+		>确定</button>
+	<button class="btn btn-default" ng-click="cancel()">取消</button>
+</div>

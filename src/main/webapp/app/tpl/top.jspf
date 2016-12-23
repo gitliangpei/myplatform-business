@@ -1,0 +1,19 @@
+<%@ page import="org.apache.shiro.subject.PrincipalCollection"%>
+<%@ page import="org.apache.shiro.SecurityUtils"%>
+<%@ page import="java.util.Map"%>
+<%
+PrincipalCollection principal = SecurityUtils.getSubject().getPrincipals();
+String username = "";
+if(null != principal){
+	//Map<String,String> attributes = (Map<String,String>) principal.asList().get(1);
+	//username = attributes.get("first");
+	username = (String)principal.asList().get(0);
+	
+	Map<String,String> attributes = (Map<String,String>) principal.asList().get(1);
+	System.out.println(attributes.get("email"));
+}
+else
+{
+	username = new String("管理员".getBytes("ISO-8859-1") , "UTF-8");
+}
+%>

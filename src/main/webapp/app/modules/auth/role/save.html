@@ -1,0 +1,131 @@
+<!-- BEGIN HEADER & CONTENT DIVIDER -->
+<div class="clearfix"> </div>
+<!-- <div class="modal-header">
+	<h3 class="modal-title">{{title}}</h3>
+</div> -->
+<!-- END HEADER & CONTENT DIVIDER -->
+<!-- BEGIN CONTAINER -->
+<!-- BEGIN CONTENT -->    
+        <!-- BEGIN CONTENT BODY -->
+        <div class="page-content">
+            <!-- BEGIN PAGE HEADER-->
+            <!-- BEGIN PAGE TITLE-->
+            <!-- END PAGE TITLE-->
+            <!-- END PAGE HEADER-->
+                <div class="col-md-12">                          
+                    <!-- BEGIN PROFILE CONTENT -->
+                    <div class="profile-content">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="portlet light ">
+                                    <div class="portlet-title tabbable-line">
+                                        <ul class="nav nav-tabs">
+                                            <li class="active">
+                                                <a href="javascript:void(0)" data-target="#tab_1_1" data-toggle="tab">基本信息</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)" data-target="#tab_1_2" data-toggle="tab">权限选择</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="portlet-body">
+                                        <div class="tab-content">
+                                        	<!-- 基本信息开始 -->
+                                            <div class="tab-pane active" id="tab_1_1">
+                                                <form role="form" name="form" class="form-horizontal form-validation">
+												<div class="form-group">
+													<div class="form-body">
+														<div class="form-group">
+															<label class="col-md-2 control-label">角色名称</label>
+															<div class="col-md-8">
+																<input type="text" class="form-control"
+																	placeholder="角色名称" ng-model="role.name" required>
+																<span class="help-block">必填</span>
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-md-2 control-label">角色简称</label>
+															<div class="col-md-8">
+																<input type="text" class="form-control"
+																	placeholder="角色简称" ng-model="role.abbr" required>
+																<span class="help-block">必填</span>
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-md-2 control-label">角色别名</label>
+															<div class="col-md-8">
+																<input type="text" class="form-control"
+																	placeholder="角色别名" ng-model="role.alias">
+																<span class="help-block">选填</span>
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-md-2 control-label">角色编码</label>
+															<div class="col-md-3">
+																<input type="text" class="form-control"
+																	placeholder="角色编码" ng-model="role.roleCode">
+																<span class="help-block">选填</span>
+															</div>
+															<label class="col-md-2 control-label">显示顺序</label>
+															<div class="col-md-3">
+																<input type="number" class="form-control"
+																	placeholder="显示顺序" ng-model="role.displayNum">
+																<span class="help-block">选填</span>
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-md-2 control-label">备注</label>
+															<div class="col-md-8">
+																<textarea rows="3" cols="" class="form-control"
+																	placeholder="1000字以内" ng-model="role.remark"></textarea>
+																<span class="help-block">选填</span>
+															</div>
+														</div>
+													</div>
+												</div>
+											</form>
+                                            </div>
+                                            <!-- 基本信息结束 -->
+                                            <!-- 权限选择开始 -->
+                                            <div class="tab-pane" id="tab_1_2">
+												<form role="form" name="form"
+													class="form-horizontal form-validation">
+													<div class="form-group">
+														<div ng-repeat="rp in rps">
+															<label class="col-md-2" style="text-align: center;">{{rp.resource.name}}</label>
+															<div class="mt-checkbox-list col-md-10">
+																<label class="mt-checkbox mt-checkbox-outline col-md-2" ng-repeat="permis in rp.children">
+																	<input class="form-control" type="checkbox" ng-checked="isChecked(rp.resource.id+':'+permis.id)"
+																	ng-click="updateSelection($event,{resource : rp.resource, permission : permis})" />
+																	{{permis.name}} 
+																	 <span></span>
+																</label>
+															</div>
+														</div>
+														<!-- <div class="mt-checkbox-list col-md-12">
+															<label class="mt-checkbox mt-checkbox-outline col-md-2">
+																<input class="form-control" type="checkbox"
+																ng-click="selectAll($event,rps)" /> 全选 <span></span>
+															</label>
+														</div> -->
+													</div>
+												</form>
+											</div>
+                                            <!-- 权限选择结束 -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END PROFILE CONTENT -->
+                </div>
+            <div class="modal-footer">
+				<button type="submit" class="btn btn-primary" ng-click="confirm(form.$valid)">确定</button>
+				<button class="btn btn-default" ng-click="cancel()">取消</button>
+			</div>
+        </div>
+        <!-- END CONTENT BODY -->
+    <!-- END CONTENT -->
+<!-- END CONTAINER -->
+

@@ -1,0 +1,69 @@
+<div class="modal-header">
+	<h3 class="modal-title">职责人员</h3>
+</div>
+<!-- END PAGE HEADER-->
+
+<!-- BEGIN MAIN CONTENT -->
+<div class="row">
+    <!-- BEGIN RIGHT -->
+    <div class="col-md-12">
+        <div class="portlet light bordered">
+            <div class="portlet-title">
+                <div class="caption" style="padding: 19px 0;">
+                    <i class="fa fa-cogs font-green-sharp"></i>
+                    <span class="caption-subject font-green-sharp bold uppercase">{{domainName}}</span>
+                </div>
+                <div class="tools">
+					<form class="form-inline " role="form">
+						<div class="form-group">
+							<label>人员名字：</label>
+							<input type="text" class="form-control" ng-model="name" placeholder="名字">
+						</div>	
+						<div class="form-group">
+							<label></label>
+							<button type="button" class="btn btn-sm btn-primary" ng-click="query()">查询</button>
+						</div>
+					</form>
+                </div>
+            </div>      
+            <div class="portlet-body form">                  
+				<div class="col-md-4">
+					<p class="caption-subject font-green-sharp bold uppercase">业务机构</p>
+					<div class="panel panel-default">  
+						<div  id="treeview" class="tree-demo"></div>						
+					</div>
+				</div>
+				<div class="col-md-8">
+					<!-- <div>
+							<select multiple="multiple" class="multi-select"
+								id="my_multi_select1" name="my_multi_select1[]">
+								<option ng-repeat="dto in dtos" on-finish-render-filters>
+									{{dto.tEmployee.realName}}
+								</option>
+							</select>
+						</div> -->
+					<p class="caption-subject font-green-sharp bold uppercase">人员列表</p>
+					<div class="panel panel-default">
+						<ez-data-grid height="350"></ez-data-grid>
+					</div>
+				</div>
+				<div style="clear:both"></div>        
+           </div> 
+           <div class="portlet-footer">
+           		<label class="col-md-10"></label>
+           		<button type="submit" class="btn btn-primary" ng-click="confirm()">确定</button>
+				<button class="btn btn-default" ng-click="cancel()">取消</button>
+           </div>
+        </div>
+    </div>
+    <!-- END RIGHT -->
+</div>
+
+
+
+
+
+
+
+
+

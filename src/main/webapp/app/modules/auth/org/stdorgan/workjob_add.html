@@ -1,0 +1,73 @@
+<div class="modal-header">
+	<h3 class="modal-title">{{title}}</h3>
+</div>
+<div class="modal-body">
+	<form role="form" name="form" class="form-horizontal form-validation">
+		<div class="form-group">
+			<label class="col-sm-3 control-label">上级菜单：</label> <label
+				class="col-sm-3 control-label" style="text-align: left">{{module.parentName}}</label>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-3 control-label">名称：</label>
+			<div class="col-sm-9">
+				<input type="text" class="form-control" ng-model="module.name"
+					required>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-3 control-label">简称：</label>
+			<div class="col-sm-9">
+				<input type="text" class="form-control" ng-model="module.abbr"
+					required>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-3 control-label">别名：</label>
+			<div class="col-sm-9">
+				<input type="text" class="form-control" ng-model="module.alias"
+					required>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-3 control-label">拼写：</label>
+			<div class="col-sm-9">
+				<input type="text" class="form-control" ng-model="module.spell"
+					required>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-3 control-label">类型：</label>
+			<div class="col-sm-9">
+				<input type="text" class="form-control" ng-model="module.type"
+					required>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-3 control-label">基准编码：</label>
+			<div class="col-sm-9">
+				<input type="text" class="form-control" ng-model="module.stdcode"
+					required>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-3 control-label">备注信息：</label>
+			<div class="col-sm-9">
+				<input type="text" class="form-control" ng-model="module.remark"
+					required>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-3 control-label">显示顺序：</label>
+			<div class="col-sm-9">
+				<input type="number" class="form-control" ng-model="module.displaynum"
+					required>
+			</div>
+		</div>
+				
+	</form>
+</div>
+<div class="modal-footer">
+	<button type="submit" class="btn btn-primary" ng-click="confirm(form.$valid)" ng-disabled="form.$invalid"
+		>确定</button>
+	<button class="btn btn-default" ng-click="cancel()">取消</button>
+</div>

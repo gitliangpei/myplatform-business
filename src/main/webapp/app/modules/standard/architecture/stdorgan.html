@@ -1,0 +1,302 @@
+<!-- 基准组织架构 -->
+<!-- BEGIN PAGE HEADER-->
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <a href="#/dashboard.html">Home</a>
+        </li>
+        <li>
+            <i class="fa fa-circle"></i>
+            <a href="#/tree">jQuery Plugins</a>
+        </li>
+        <li>
+            <i class="fa fa-circle"></i>
+            <a href="#/tree">Tree View</a>
+        </li>
+    </ul>
+    <div class="page-toolbar">
+        <div class="btn-group pull-right">
+            <button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" dropdown-menu-hover data-delay="1000" data-close-others="true"> Actions
+                <i class="fa fa-angle-down"></i>
+            </button>
+            <ul class="dropdown-menu pull-right" role="menu">
+                <li>
+                    <a href="#">
+                        <i class="icon-user"></i> New User </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-present"></i> New Event
+                        <span class="badge badge-success">4</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-basket"></i> New order </a>
+                </li>
+                <li class="divider"> </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-flag"></i> Pending Orders
+                        <span class="badge badge-danger">4</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-users"></i> Pending Users
+                        <span class="badge badge-warning">12</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<h3 class="page-title"> 基准组织体系
+    <small>基准体系</small>
+</h3>
+<!-- END PAGE HEADER-->
+
+<!-- BEGIN MAIN CONTENT -->
+<div class="row">
+    <div class="col-md-5">
+        <div class="portlet light bordered">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-cogs font-green-sharp"></i>
+                    <span class="caption-subject font-green-sharp bold uppercase">基准组织架构</span>
+                </div>
+                <div class="tools">
+                    <a href="javascript:;" class="collapse"> </a>
+                    <a href="#portlet-config" data-toggle="modal" class="config"> </a>
+                    <a href="javascript:;" class="reload"> </a>
+                    <a href="javascript:;" class="remove"> </a>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div id="treeview" class="tree-demo"> </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-7">
+        <div class="portlet light bordered">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-cogs font-green-sharp"></i>
+                    <span class="caption-subject font-green-sharp bold uppercase">基准组织单元</span>
+                </div>
+                <div class="tools">
+                    <a href="javascript:;" class="collapse"> </a>
+                    <a href="#portlet-config" data-toggle="modal" class="config"> </a>
+                    <a href="javascript:;" class="reload"> </a>
+                    <a href="javascript:;" class="remove"> </a>
+                </div>
+            </div>
+            <!-- BEGGING PORTLET-BODY -->
+            <div class="portlet-body form">
+                <!-- FORM 1 -->
+                <!--
+                <form role="form">
+                    <div class="form-body">
+                        <div class="form-group form-md-line-input has-success form-md-floating-label">
+                            <div class="input-icon right">
+                                <input type="text" class="form-control input-sm">
+                                <label for="form_control_1">基准单元名称</label>
+                                <span class="help-block">Some help goes here...</span>
+                                <i class="fa fa-bell-o"></i>
+                            </div>
+                        </div>
+                        <div class="form-group form-md-line-input has-success form-md-floating-label">
+                            <div class="input-icon right">
+                                <input type="text" class="form-control input-sm">
+                                <label for="form_control_2">基准单元简称</label>
+                                <span class="help-block">Some help goes here...</span>
+                                <i class="fa fa-bell-o"></i>
+                            </div>
+                        </div>
+                        <div class="form-group form-md-line-input has-success form-md-floating-label">
+                            <div class="input-icon right">
+                                <input type="text" class="form-control input-sm">
+                                <label for="form_control_2">基准单元别名</label>
+                                <span class="help-block">Some help goes here...</span>
+                                <i class="fa fa-bell-o"></i>
+                            </div>
+                        </div>
+                        <div class="form-group form-md-line-input has-success form-md-floating-label">
+                            <div class="input-icon right">
+                                <input type="text" class="form-control input-sm">
+                                <label for="form_control_2">基准单元编码</label>
+                                <span class="help-block">Some help goes here...</span>
+                                <i class="fa fa-bell-o"></i>
+                            </div>
+                        </div>
+                        <div class="form-group form-md-line-input has-success form-md-floating-label">
+                            <div class="input-icon right">
+                                <select class="form-control" id="form_control_1">
+                                    <option value=""></option>
+                                    <option value="3">公司</option>
+                                    <option value="4">机构</option>
+                                </select>
+                                <label for="form_control_2">基准单元类型</label>
+                            </div>
+                        </div>
+                        <div class="form-group form-md-line-input has-success form-md-floating-label">
+                            <div class="input-icon right">
+                                <textarea class="form-control" rows="2" placeholder=""></textarea>
+                                <label for="form_control_2">备注信息</label>
+                            </div>
+                        </div>
+                        <div class="form-group form-md-line-input has-success form-md-floating-label">
+                            <div class="input-icon right">
+                                <input type="text" class="form-control">
+                                <label for="form_control_2">显示顺序</label>
+                                <span class="help-block">Some help goes here...</span>
+                                <i class="fa fa-bell-o"></i>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                --> 
+                <!-- FORM 2 -->
+                <form class="form-horizontal" role="form">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">基准单元名称</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control input-sm" placeholder="Enter text">
+                                <span class="help-block"> A block of help text. </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">基准单元简称</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control input-sm" placeholder="Enter text">
+                                <span class="help-block"> A block of help text. </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">基准单元别名</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control input-sm" placeholder="Enter text">
+                                <span class="help-block"> A block of help text. </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">基准单元编码</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control input-sm" placeholder="Enter text">
+                                <span class="help-block"> A block of help text. </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">基准单元类型</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control input-sm" placeholder="Enter text">
+                                <span class="help-block"> A block of help text. </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">备注信息</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control input-sm" placeholder="Enter text">
+                                <span class="help-block"> A block of help text. </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">显示顺序</label>
+                            <div class="col-md-9">
+                                <div class="input-inline input-medium">
+                                    <div class="input-group bootstrap-touchspin">
+                                        <span class="input-group-btn">
+                                            <button class="btn green bootstrap-touchspin-down" type="button">-</button>
+                                        </span>
+                                        <input id="touchspin_demo1" type="text" value="55" name="demo1" class="form-control" style="display: block;">
+                                        <span class="input-group-btn">
+                                            <button class="btn green bootstrap-touchspin-up" type="button">+</button>
+                                        </span>
+                                    </div>
+                                </div>
+                                <span class="help-block"> A block of help text. </span>
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+                
+                <!-- BEGGING DIALOG -->
+                <!--
+                <div id="myModal_autocomplete" class="modal fade" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                <h4 class="modal-title">Radio Switch in Modal</h4>
+                            </div>
+                            <div class="modal-body form">
+                                <form action="#" class="form-horizontal form-row-seperated">
+                                    <div class="form-group">
+                                        <label class="col-sm-4 control-label">Basic Auto Complete</label>
+                                        <div class="col-sm-8">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <i class="fa fa-user"></i>
+                                                </span>
+                                                <input type="text" id="typeahead_example_modal_1" name="typeahead_example_modal_1" class="form-control" /> </div>
+                                            <p class="help-block"> E.g: metronic, keenthemes.
+                                                <br>
+                                                <span class="label label-success label-sm"> Learn more: </span>
+                                                <a target="_blank" href="http://twitter.github.io/typeahead.js/"> http://twitter.github.io/typeahead.js/ </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-4 control-label">Country Auto Complete</label>
+                                        <div class="col-sm-8">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <i class="fa fa-search"></i>
+                                                </span>
+                                                <input type="text" id="typeahead_example_modal_2" name="typeahead_example_modal_2" class="form-control" /> </div>
+                                            <p class="help-block"> E.g: USA, Malaysia. Prefetch from JSON source</code>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-4 control-label">Custom Template</label>
+                                        <div class="col-sm-8">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <i class="fa fa-cogs"></i>
+                                                </span>
+                                                <input type="text" id="typeahead_example_modal_3" name="typeahead_example_modal_3" class="form-control" /> </div>
+                                            <p class="help-block"> Uses a precompiled template to customize look of suggestion.</code>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group last">
+                                        <label class="col-sm-4 control-label">Multiple Sections with Headers</label>
+                                        <div class="col-sm-8">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <i class="fa fa-check"></i>
+                                                </span>
+                                                <input type="text" id="typeahead_example_modal_4" name="typeahead_example_modal_4" class="form-control" /> </div>
+                                            <p class="help-block"> Two datasets that are prefetched, stored, and searched on the client. Highlighting is enabled. </p>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">
+                                    <i class="fa fa-check"></i> Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                -->
+                <!-- END DIALOG -->
+            </div>
+            <!-- END PORTLET-BODY -->
+        </div>
+    </div>
+</div>

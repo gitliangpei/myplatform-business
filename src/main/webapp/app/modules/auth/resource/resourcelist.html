@@ -1,0 +1,36 @@
+<h3 class="page-title"> 
+    	资源管理
+</h3>
+<!-- END PAGE HEADER-->
+
+<!-- BEGIN MAIN CONTENT -->
+<div class="row">
+    <!-- BEGIN RIGHT -->
+    <div class="col-md-12">
+        <div class="portlet light bordered">
+            <div class="portlet-title form">
+            	<form class="form-horizontal form-validation" role="form">
+	                <div class="form-group form-inline col-md-9">
+						<label>资源名称：</label>
+						<input type="text" class="form-control" ng-model="resName" placeholder="名称">
+						&nbsp;&nbsp;
+						<label>资源类型：</label>
+						<select class="form-control" ng-model="resType"
+							ng-options="type.id as type.name for type in resTypes"></select>
+					</div>
+					<div class="form-group col-md-3 pull-right" style="text-align: right;">
+						<label></label>
+						<button type="button" class="btn btn-sm btn-primary" ng-click="query()">搜索</button>
+						<button type="button" class="btn btn-sm btn-warning"  ng-click="doClear()">清空</button>
+						<a type="button" class="btn btn-sm w-xs btn-success" ng-click="goToAdd()">添加</a>
+					</div>
+                </form>
+            </div>
+            <!-- BEGGING PORTLET-BODY -->
+            <div class="portlet-body form">
+                <ez-data-grid height="350"></ez-data-grid>
+            </div>
+        </div>
+    </div>
+    <!-- END RIGHT -->
+</div>

@@ -1,0 +1,59 @@
+<!-- 基准组织架构 -->
+<!-- BEGIN PAGE HEADER-->
+
+<h3 class="page-title">
+    人员管理
+</h3>
+<!-- END PAGE HEADER-->
+
+<!-- BEGIN MAIN CONTENT -->
+<div class="row">
+    <!-- BEGIN RIGHT -->
+    <div class="col-md-12">
+        <div class="portlet light bordered">
+            <div class="portlet-title">
+                <div class="row">
+					<form class="form-inline " role="form">
+						<div class="form-group col-md-6">
+							<label>人员名字：</label>
+							<input type="text" class="form-control" ng-model="realName" placeholder="名字">
+						</div>	
+						<div class="form-group col-md-6 pull-right" style="text-align: right"">
+							<label></label>
+							<button type="button" class="btn btn-sm btn-primary" ng-click="query()">查询</button>
+							<button type="button" class="btn btn-sm btn-warning"  ng-click="doClear()">清空</button>
+							<a type="button" class="btn btn-sm w-xs btn-info"
+								ng-click="addClick()">添加人员</a>	
+						</div>
+					</form>
+                </div>
+            </div>      
+          <!-- BEGGING PORTLET-BODY -->
+            <div class="portlet-body form"  >                  
+				<div class="col-md-3" style=" height:auto!important;min-height: 328px;border:1px solid #D4D4D4;padding:0px">
+				    <div class="btn btn-sm btn-info" style="height:40px;width:100%">
+							<h4>基准机构</h4>
+					</div>
+				    <div class="panel panel-default "  >
+					     <div  id="treeview" class="tree-demo" style="margin-top:10px;font-size:16px"></div>
+					</div> 
+				</div>
+				<div  class="col-md-9">
+					 <div class="panel panel-default" >
+                            <ez-data-grid height="310"></ez-data-grid>
+                     </div>
+				</div>  
+				<div style="clear:both"></div>        
+           </div>
+        </div>
+    </div>
+    
+    <!-- END RIGHT -->
+</div>
+
+
+
+
+
+
+
